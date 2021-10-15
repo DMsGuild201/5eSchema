@@ -12,7 +12,8 @@
 
 		"featureType": {
 			"type": "array",
-			"items": {"$ref": "util.json#/definitions/dataOptionalfeatureType"}
+			"items": {"$ref": "util.json#/definitions/dataOptionalfeatureType"},
+			"uniqueItems": true
 		},
 
 		"optionalfeature": {
@@ -50,32 +51,15 @@
 					"type": "integer"
 				},
 				"featureType": {
-					"anyOf": [
+					"oneOf": [
 						{
-							"oneOf": [
-								{
-									"$ref": "#/definitions/featureType"
-								},
-								{
-									"type": "string"
-								}
-							]
+							"$ref": "#/definitions/featureType"
 						},
 						{
-							"oneOf": [
-								{
-									"type": "array",
-									"items": {
-										"$ref": "#/definitions/featureType"
-									}
-								},
-								{
-									"type": "array",
-									"items": {
-										"type": "string"
-									}
-								}
-							]
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/featureType"
+							}
 						}
 					]
 				},

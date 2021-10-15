@@ -103,7 +103,7 @@
 					"type": "string"
 				},
 				"reload": {
-					"type": "string"
+					"type": ["string", "integer"]
 				},
 				"reqAttune": {
 					"oneOf": [

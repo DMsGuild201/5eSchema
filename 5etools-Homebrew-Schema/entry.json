@@ -539,7 +539,8 @@
 								"type": "object",
 								"properties": {
 									"number": {
-										"type": "integer"
+										"type": "integer",
+										"default": 1
 									},
 									"faces": {
 										"type": "integer"
