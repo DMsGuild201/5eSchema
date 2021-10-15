@@ -26,7 +26,7 @@
 					"type": "string"
 				},
 				"pantheon": {
-					"oneOf": [
+					"anyOf": [
 						{
 							"type": "string",
 							"enum": [
