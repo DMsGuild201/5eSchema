@@ -210,11 +210,9 @@
 					"$ref": "util.json#/definitions/speed"
 				},
 				"size": {
-					"description": "M: Medium\n S: Small\n V: Varies",
 					"type": "array",
 					"items": {
-						"type": "string",
-						"enum": ["M", "S", "V"]
+						"$ref": "util.json#/definitions/size"
 					}
 				},
 				"entries": {

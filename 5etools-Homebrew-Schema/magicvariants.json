@@ -37,7 +37,13 @@
 								"source": {"type": "string"},
 								"type": {"type": "string"},
 								"scfType": {"type": "string"},
-								"net": {"type": "boolean"}
+								"net": {"type": "boolean"},
+								"weaponCategory": {
+									"anyOf": [
+										{"type": "string", "enum": ["simple", "martial"]},
+										{"type": "string"}
+									]
+								}
 							},
 							"additionalProperties": false
 						}

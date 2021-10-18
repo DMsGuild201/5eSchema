@@ -74,10 +74,7 @@
 				"id": {
 					"type": "string"
 				}
-			},
-			"required": [
-				"type"
-			]
+			}
 		},
 
 		"entrySection": {
