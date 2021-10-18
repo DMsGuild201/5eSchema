@@ -57,6 +57,10 @@
 							"type": "string"
 						}
 					},
+					"fluff": {
+						"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source",
+						"$ref": "util.json#/definitions/fluffObject"
+					},
 					"hasFluff": {"type": "boolean"},
 					"hasFluffImages": {"type": "boolean"}
 				},

@@ -261,6 +261,7 @@
 					"type": ["string", "integer"]
 				},
 				"recharge": {
+					"type":	"string",
 					"enum": ["round", "restShort", "restLong", "dawn", "dusk", "midnight", "special"]
 				},
 				"attachedSpells": {
