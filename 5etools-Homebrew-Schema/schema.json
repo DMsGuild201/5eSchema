@@ -401,6 +401,9 @@
 		"race": {
 			"$ref": "races.json#/properties/race"
 		},
+		"subrace": {
+			"$ref": "races.json#/properties/subrace"
+		},
 		"raceFluff": {
 			"$ref": "fluff-races.json#/properties/raceFluff"
 		},
