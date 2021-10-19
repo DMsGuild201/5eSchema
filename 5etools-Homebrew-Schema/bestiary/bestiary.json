@@ -535,33 +535,10 @@
 					"type": "string"
 				},
 				"action": {
-					"oneOf": [
-						{
-							"type": "array",
-							"items": {
-								"type": "object",
-								"properties": {
-									"name": {
-										"type": "string"
-									},
-									"entries": {
-										"type": "array",
-										"items": {
-											"$ref": "../entry.json"
-										}
-									}
-								},
-								"required": [
-									"name",
-									"entries"
-								],
-								"additionalProperties": false
-							}
-						},
-						{
-							"type": "null"
-						}
-					]
+					"type": "array",
+					"items": {
+						"$ref": "../entry.json"
+					}
 				},
 				"bonus": {
 					"type": "array",
@@ -764,10 +741,9 @@
 				},
 				"fluff": {
 					"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source",
-					"oneOf": [
+					"anyOf": [
 						{
-							"$ref": "../util.json#/definitions/fluffObject",
-							"additionalProperties": false
+							"$ref": "../util.json#/definitions/fluffObject"
 						},
 						{
 							"description": "Reference \"monsterFluff\" array items",
@@ -795,8 +771,7 @@
 										}
 									}
 								}
-							},
-							"additionalProperties": false
+							}
 						}
 					]
 				},
@@ -810,19 +785,26 @@
 				"environment": {
 					"type": "array",
 					"items": {
-						"type": "string",
-						"enum": [
-							"arctic",
-							"coastal",
-							"desert",
-							"forest",
-							"grassland",
-							"hill",
-							"mountain",
-							"swamp",
-							"underdark",
-							"underwater",
-							"urban"
+						"anyOf": [
+							{
+								"type": "string",
+								"enum": [
+									"arctic",
+									"coastal",
+									"desert",
+									"forest",
+									"grassland",
+									"hill",
+									"mountain",
+									"swamp",
+									"underdark",
+									"underwater",
+									"urban"
+								]
+							},
+							{
+								"type": "string"
+							}
 						]
 					}
 				},
