@@ -46,6 +46,13 @@
 				"ability": {
 					"$ref": "#/definitions/abilityScores"
 				},
+				"size": {
+					"description": "If used in a subrace you must ensure you've set \"overwrite\": to include \"size\"",
+					"type": "array",
+					"items": {
+						"$ref": "util.json#/definitions/size"
+					}
+				},
 				"speed": {
 					"$ref": "util.json#/definitions/speed"
 				},

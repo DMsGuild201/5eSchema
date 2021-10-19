@@ -245,6 +245,17 @@
 						}
 					}
 				},
+				"internalCopies": {
+					"type": "object",
+					"patternProperties": {
+						"^[a-zA-Z]+$": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				},
 				"unlisted": {
 					"description": "If this homebrew file should be ignored/hidden by any indexer.",
 					"type": "boolean"
@@ -473,6 +484,9 @@
 		},
 		"charoption": {
 			"$ref": "charcreationoptions.json#/properties/charoption"
+		},
+		"name": {
+			"$ref": "names.json#/properties/name"
 		},
 		"foundryClassFeature": {
 			"$ref": "class/foundry.json#/properties/classFeature"
