@@ -182,7 +182,10 @@
 						"type": "boolean"
 					},
 					"weaponCategory": {
-						"type": "string"
+						"anyOf": [
+							{"type": "string", "enum": ["simple", "martial"]},
+							{"type": "string"}
+						]
 					},
 					"weight": {
 						"type": "number"

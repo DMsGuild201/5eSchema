@@ -54,7 +54,10 @@
 							"type": "boolean"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": { "type": "boolean" },
+					"propertyNames": {
+						"pattern": "^[A-Za-z]+$"
+					}
 				},
 				"time": {
 					"type": "array",
