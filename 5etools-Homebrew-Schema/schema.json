@@ -246,14 +246,10 @@
 					}
 				},
 				"internalCopies": {
-					"type": "object",
-					"patternProperties": {
-						"^[a-zA-Z]+$": {
-							"type": "array",
-							"items": {
-								"type": "string"
-							}
-						}
+					"description": "An array of keys that are copied from within the current document. e.g. \"item\", \"monsterFluff\", \"background\" etc.",
+					"type": "array",
+					"items": {
+						"type": "string"
 					}
 				},
 				"unlisted": {
