@@ -1,6 +1,10 @@
-# Current site Version Compatibility
+# Current Site Version Compatibility and Provenance
 
 This schema repo is currently updated to support version `1.140.0` of the site.
+
+This schema is built from the original 5eTools Site Schema which can be found [here](https://github.com/5etools-mirror-1/5etools-mirror-1.github.io/tree/master/test/schema).
+
+It further adapts the [main schema file](https://github.com/TheGiddyLimit/homebrew/blob/master/schema.json) from the homebrew repository that it aims to fully lint, which is available [here](https://github.com/TheGiddyLimit/homebrew).
 
 ## Important use instruction
 
