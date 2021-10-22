@@ -10,5 +10,6 @@
 				"$ref": "entry.json"
 			}
 		}
-	}
+	},
+	"additionalProperties": false
 }

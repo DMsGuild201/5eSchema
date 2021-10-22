@@ -158,40 +158,33 @@
 						"type": "string"
 					},
 					"storyline": {
-						"anyOf": [
-							{
-								"type": "string",
-								"enum": [
-									"Acquisitions Incorporated",
-									"Adventures in the Forgotten Realms",
-									"Baldur's Gate",
-									"Candlekeep Mysteries",
-									"Eberron",
-									"Elemental Evil",
-									"Essentials Kit",
-									"Extra Life",
-									"Ghosts of Saltmarsh",
-									"Icewind Dale",
-									"Ixalan",
-									"Mythic Odysseys of Theros",
-									"Rage of Demons",
-									"Ravenloft",
-									"Ravnica",
-									"Rick and Morty",
-									"Starter Set",
-									"Storm King's Thunder",
-									"Stranger Things",
-									"Tales from the Yawning Portal",
-									"The Wild Beyond the Witchlight",
-									"Tomb of Annihilation",
-									"Tyranny of Dragons",
-									"Waterdeep",
-									"Wildemount"
-								]
-							},
-							{
-								"type": "string"
-							}
+						"type": "string",
+						"examples": [
+							"Starter Set",
+							"Tyranny of Dragons",
+							"Elemental Evil",
+							"Rage of Demons",
+							"Ravenloft",
+							"Storm King's Thunder",
+							"Tales from the Yawning Portal",
+							"Tomb of Annihilation",
+							"Waterdeep",
+							"Ravnica",
+							"Extra Life",
+							"Ghosts of Saltmarsh",
+							"Acquisitions Incorporated",
+							"Essentials Kit",
+							"Stranger Things",
+							"Baldur's Gate",
+							"Eberron",
+							"Rick and Morty",
+							"Wildemount",
+							"Icewind Dale",
+							"Mythic Odysseys of Theros",
+							"Candlekeep Mysteries",
+							"Adventures in the Forgotten Realms",
+							"The Wild Beyond the Witchlight",
+							"Ixalan"
 						]
 					}
 				},

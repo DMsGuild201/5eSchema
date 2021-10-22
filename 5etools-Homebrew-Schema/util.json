@@ -138,6 +138,62 @@
 			}
 		},
 
+		"rarity": {
+			"type": "string",
+			"description": "\"None\" is for mundane items. \n\"Unknown\" is for miscellaneous mundane items.  \n\"Unknown (Magic)\" is for miscellaneous magical items. \n\"Varies\" is for item groups; and may not be used in \"baseitem\"s.",
+			"enum": [
+				"none",
+				"unknown",
+
+				"common",
+				"uncommon",
+				"rare",
+				"very rare",
+				"legendary",
+				"artifact",
+				"unknown (magic)",
+
+				"varies"
+			]
+		},
+
+		"itemTypeTags": {
+			"type": "string",
+			"description": "$: Treasure\n A: Ammunition\n AF: Ammunition (futuristic)\n AIR: Vehicle (air)\n AT: Artisan Tool\n EM: Eldritch Machine\n EXP: Explosive\n G: Adventuring Gear\n GS: Gaming Set\n GV: Generic Variant\n HA: Heavy Armor\n INS: Instrument\n LA: Light Armor\n M: Melee Weapon\n MA: Medium Armor\n MNT: Mount\n OTH: Other\n P: Potion\n R: Ranged Weapon\n RD: Rod\n RG: Ring\n S: Shield\n SC: Scroll\n SCF: Spellcasting Focus\n SHP: Vehicle (water)\n T: Tool\n TAH: Tack and Harness\n TG: Trade Good\n VEH: Vehicle (land)\n WD: Wand",
+			"examples": [
+				"$",
+				"A",
+				"AF",
+				"AIR",
+				"AT",
+				"EM",
+				"EXP",
+				"G",
+				"GS",
+				"GV",
+				"HA",
+				"INS",
+				"LA",
+				"M",
+				"MA",
+				"MNT",
+				"OTH",
+				"P",
+				"R",
+				"RD",
+				"RG",
+				"S",
+				"SC",
+				"SCF",
+				"SHP",
+				"T",
+				"TAH",
+				"TG",
+				"VEH",
+				"WD"
+			]
+		},
+
 		"toolNameLower": {
 			"type": "string",
 			"enum": [
@@ -857,27 +913,13 @@
 						]
 					},
 					"pact": {
-						"anyOf": [
-							{
-								"type": "string",
-								"enum": ["Blade", "Chain", "Tome", "Talisman"]
-							},
-							{
-								"type": "string"
-							}
-						]
+						"type": "string",
+						"examples": ["Blade", "Chain", "Tome", "Talisman"]
 					},
 					"patron": {
-						"anyOf": [
-							{
-								"type": "string",
-								"enum": [
-									"The Archfey", "The Fiend", "The Great Old One", "The Hexblade", "The Raven Queen", "The Seeker"
-								]
-							},
-							{
-								"type": "string"
-							}
+						"type": "string",
+						"examples": [
+							"The Archfey", "The Fiend", "The Great Old One", "The Hexblade", "The Raven Queen", "The Seeker"
 						]
 					},
 					"spell": {
@@ -996,29 +1038,22 @@
 		},
 
 		"creatureType": {
-			"anyOf": [
-				{
-					"type": "string",
-					"enum": [
-						"aberration",
-						"beast",
-						"celestial",
-						"construct",
-						"dragon",
-						"elemental",
-						"fey",
-						"fiend",
-						"giant",
-						"humanoid",
-						"monstrosity",
-						"ooze",
-						"plant",
-						"undead"
-					]
-				},
-				{
-					"type": "string"
-				}
+			"type": "string",
+			"examples": [
+				"aberration",
+				"beast",
+				"celestial",
+				"construct",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant",
+				"undead"
 			]
 		},
 
@@ -1097,44 +1132,57 @@
 			]
 		},
 
+		"dataDamageTags": {
+			"type": "string",
+			"description": "A: Acid\n B: Bludgeoning\n C: Cold\n F: Fire\n O: Force\n L: Lightning\n N: Necrotic\n P: Piercing\n I: Poison\n Y: Psychic\n R: Radiant\n S: Slashing\n T: Thunder",
+			"enum": [
+				"A",
+				"B",
+				"C",
+				"F",
+				"O",
+				"L",
+				"N",
+				"P",
+				"I",
+				"Y",
+				"R",
+				"S",
+				"T"
+			]
+		},
+
 		"dataOptionalfeatureType": {
-			"anyOf": [
-				{
-					"type": "string",
-					"description": "AF: Alchemical Formula\n AI: Artificer Infusion\n AS: Arcane Shot\n AS:V1-UA: Arcane Shot, V1 (UA)\n AS:V2-UA: Arcane Shot, V2 (UA)\n ED: Elemental Discipline\n EI: Eldritch Invocation\n FS:B: Fighting Style; Bard\n FS:F: Fighting Style; Fighter\n FS:P: Fighting Style; Paladin\n FS:R: Fighting Style; Ranger\n IWM:A: Infernal War Machine Upgrade, Armor\n IWM:G: Infernal War Machine Upgrade, Gadget\n IWM:W: Infernal War Machine Variant, Weapon\n MM: Metamagic\n MV: Maneuver\n MV:B: Maneuver, Battle Master\n MV:C2-UA: Maneuver, Cavalier V2 (UA)\n OR: Onomancy Resonant\n OTH: Other\n PB: Pact Boon\n RN: Rune Knight Rune\n SHP:F: Ship Upgrade, Figurehead\n SHP:H: Ship Upgrade, Hull\n SHP:M: Ship Upgrade, Movement\n SHP:O: Ship Upgrade, Miscellaneous\n SHP:W: Ship Upgrade, Weapon",
-					"enum": [
-						"AF",
-						"AI",
-						"AS",
-						"AS:V1-UA",
-						"AS:V2-UA",
-						"ED",
-						"EI",
-						"FS:B",
-						"FS:F",
-						"FS:P",
-						"FS:R",
-						"IWM:A",
-						"IWM:G",
-						"IWM:W",
-						"MM",
-						"MV",
-						"MV:B",
-						"MV:C2-UA",
-						"OR",
-						"OTH",
-						"PB",
-						"RN",
-						"SHP:F",
-						"SHP:H",
-						"SHP:M",
-						"SHP:O",
-						"SHP:W"
-					]
-				},
-				{
-					"type": "string"
-				}
+			"type": "string",
+			"description": "AF: Alchemical Formula\n AI: Artificer Infusion\n AS: Arcane Shot\n AS:V1-UA: Arcane Shot, V1 (UA)\n AS:V2-UA: Arcane Shot, V2 (UA)\n ED: Elemental Discipline\n EI: Eldritch Invocation\n FS:B: Fighting Style; Bard\n FS:F: Fighting Style; Fighter\n FS:P: Fighting Style; Paladin\n FS:R: Fighting Style; Ranger\n IWM:A: Infernal War Machine Upgrade, Armor\n IWM:G: Infernal War Machine Upgrade, Gadget\n IWM:W: Infernal War Machine Variant, Weapon\n MM: Metamagic\n MV: Maneuver\n MV:B: Maneuver, Battle Master\n MV:C2-UA: Maneuver, Cavalier V2 (UA)\n OR: Onomancy Resonant\n OTH: Other\n PB: Pact Boon\n RN: Rune Knight Rune\n SHP:F: Ship Upgrade, Figurehead\n SHP:H: Ship Upgrade, Hull\n SHP:M: Ship Upgrade, Movement\n SHP:O: Ship Upgrade, Miscellaneous\n SHP:W: Ship Upgrade, Weapon",
+			"examples": [
+				"AF",
+				"AI",
+				"AS",
+				"AS:V1-UA",
+				"AS:V2-UA",
+				"ED",
+				"EI",
+				"FS:B",
+				"FS:F",
+				"FS:P",
+				"FS:R",
+				"IWM:A",
+				"IWM:G",
+				"IWM:W",
+				"MM",
+				"MV",
+				"MV:B",
+				"MV:C2-UA",
+				"OR",
+				"OTH",
+				"PB",
+				"RN",
+				"SHP:F",
+				"SHP:H",
+				"SHP:M",
+				"SHP:O",
+				"SHP:W"
 			]
 		},
 
@@ -1475,7 +1523,7 @@
 								"$ref": "#/definitions/genericFluffArrayItemData"
 							},
 							{
-								"$ref": "util.json#/definitions/copyBlock"
+								"$ref": "#/definitions/copyBlock"
 							}
 						]
 					}
@@ -1765,12 +1813,12 @@
 											"type": "string"
 										},
 										{
-											"$ref": "util.json#/definitions/copyModifier"
+											"$ref": "#/definitions/copyModifier"
 										},
 										{
 											"type": "array",
 											"items": {
-												"$ref": "util.json#/definitions/copyModifier"
+												"$ref": "#/definitions/copyModifier"
 											}
 										}
 									]
@@ -1804,14 +1852,7 @@
 		},
 
 		"srd": {
-			"oneOf": [
-				{
-					"type": "boolean"
-				},
-				{
-					"type": "string"
-				}
-			]
+			"type": ["boolean", "string"]
 		},
 
 		"fluffObject": {
@@ -1950,7 +1991,7 @@
 		},
 
 		"additionalSpellsArray": {
-			"description": "A collection of additional spells which a feature grants.",
+			"description": "A collection of additional spells which a feature grants.\nThis array enables import functionality for VTTs, and should be used in addition to \"classSpells\"/\"subclassSpells\"/\"subSubclassSpells\" blocks which enable references on the site.",
 			"type": "array",
 			"items": {
 				"type": "object",
@@ -2113,15 +2154,15 @@
 			}
 		},
 
-		"reqAttuneTags": {
+		"additionalSpellsArray": {
 			"type": "array",
 			"items": {
 				"type": "object",
 				"properties": {
 					"background":{"type": "string"},
 					"race": {"type": "string"},
-					"creatureType":{"$ref": "util.json#/definitions/creatureType"},
-					"size": {"type": "string"},
+					"creatureType":{"$ref": "#/definitions/creatureType"},
+					"size": {"$ref": "#/definitions/size"},
 					"class":{"type": "string"},
 
 					"languageProficiency": {"$ref": "#/definitions/languageNameLower"},
@@ -2129,8 +2170,7 @@
 
 					"alignment": {
 						"type": "array",
-						"description": "L: Lawful\n N: Neutral\n NX: Neutral (law/chaos axis)\n NY: Neutral (good/evil axis)\n C: Chaotic\n G: Good\n E: Evil\n U: Unaligned\n A: Any",
-						"items": {"$ref": "util.json#/definitions/alignment"}
+						"items": {"$ref": "#/definitions/alignment"}
 					},
 
 					"str": {"type": "integer"},

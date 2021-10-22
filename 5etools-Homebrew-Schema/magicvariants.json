@@ -14,7 +14,7 @@
 						"type": "string"
 					},
 					"type": {
-						"type": "string"
+						"$ref": "util.json#/definitions/itemTypeTags"
 					},
 					"entries": {
 						"type": "array",
@@ -32,18 +32,13 @@
 								"axe": {"type": "boolean"},
 								"sword": {"type": "boolean"},
 								"weapon": {"type": "boolean"},
-								"dmgType": {"type": "string"},
+								"dmgType": {"$ref": "util.json#/definitions/dataDamageTags"},
 								"name": {"type": "string"},
 								"source": {"type": "string"},
-								"type": {"type": "string"},
-								"scfType": {"type": "string"},
+								"type": {"$ref": "util.json#/definitions/itemTypeTags"},
+								"scfType": {"type": "string", "examples": ["arcane", "druid", "holy"]},
 								"net": {"type": "boolean"},
-								"weaponCategory": {
-									"anyOf": [
-										{"type": "string", "enum": ["simple", "martial"]},
-										{"type": "string"}
-									]
-								}
+								"weaponCategory": {"type": "string", "examples": ["simple", "martial"]}
 							},
 							"additionalProperties": false
 						}
@@ -53,7 +48,7 @@
 						"properties": {
 							"type": {
 								"description": "Generally this should be omitted, as the type of the base item will be used.",
-								"type": "string"
+								"$ref": "util.json#/definitions/itemTypeTags"
 							},
 							"bonusAc": {
 								"type": "string"
@@ -82,25 +77,10 @@
 							"tier": {
 								"type": "string",
 								"description": "Item Tier as per XGE p135",
-								"enum": ["minor", "major"]
+								"examples": ["minor", "major"]
 							},
 							"rarity": {
-								"type": "string",
-								"description": "\"None\" is for mundane items.\n\"Unknown\" is for miscellaneous mundane items. \n\"Unknown (Magic)\" is for miscellaneous magical items. \n\"Varies\" is for itemgroups.",
-								"enum": [
-									"none",
-									"unknown",
-
-									"common",
-									"uncommon",
-									"rare",
-									"very rare",
-									"legendary",
-									"artifact",
-									"unknown (magic)",
-
-									"varies"
-								]
+								"$ref": "util.json#/definitions/rarity"
 							},
 							"source": {
 								"type": "string"
@@ -118,14 +98,7 @@
 								"type": "string"
 							},
 							"reqAttune": {
-								"oneOf": [
-									{
-										"type": "string"
-									},
-									{
-										"type": "boolean"
-									}
-								]
+								"type": ["string", "boolean"]
 							},
 							"curse": {
 								"type": "boolean"
@@ -221,10 +194,8 @@
 								"$ref": "util.json#/definitions/fluffObject"
 							},
 							"weaponCategory": {
-								"anyOf": [
-									{"type": "string", "enum": ["simple", "martial"]},
-									{"type": "string"}
-								]
+								"type": "string",
+								"examples": ["simple", "martial"]
 							},
 							"hasRefs": {"type": "boolean"}
 						},
@@ -295,8 +266,8 @@
 		},
 		"linkedLootTables": {
 			"type": "object",
-			"properties": {
-				"DMG": {
+			"patternProperties": {
+				".*": {
 					"type": "object"
 				}
 			}

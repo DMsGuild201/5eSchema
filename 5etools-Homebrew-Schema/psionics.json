@@ -20,13 +20,16 @@
 						"type": "integer"
 					},
 					"type": {
-						"type": "string"
+						"description": "D: Discipline\nT: Talent",
+						"type": "string",
+						"examples": ["D", "T"]
 					},
 					"focus": {
 						"type": "string"
 					},
 					"order": {
-						"type": "string"
+						"type": "string",
+						"examples": ["Avatar", "Awakened", "Immortal", "Nomad", "Wu Jen"]
 					},
 					"modes": {
 						"type": "array",

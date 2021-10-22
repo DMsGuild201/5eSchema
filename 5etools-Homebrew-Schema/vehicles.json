@@ -42,7 +42,7 @@
 				},
 				"upgradeType": {
 					"type": "array",
-					"items": {"type": "string"}
+					"items": {"$ref": "util.json#/definitions/dataOptionalfeatureType"}
 				},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"}
@@ -71,20 +71,7 @@
 				"vehicleType": {"const": "SHIP"},
 				"terrain": {"$ref": "#/definitions/vehicleTerrain"},
 				"size": {
-					"type": "string",
-					"description": "F: Fine\n D: Diminutive\n T: Tiny\n S: Small\n M: Medium\n L: Large\n H: Huge\n G: Gargantuan\n C: Colossal\n V: Varies.",
-					"enum": [
-						"F",
-						"D",
-						"T",
-						"S",
-						"M",
-						"L",
-						"H",
-						"G",
-						"C",
-						"V"
-					]
+					"$ref": "util.json#/definitions/size"
 				},
 				"dimensions": {
 					"type": "array",
@@ -384,20 +371,7 @@
 				"vehicleType": {"const": "INFWAR"},
 				"terrain": {"$ref": "#/definitions/vehicleTerrain"},
 				"size": {
-					"type": "string",
-					"description": "F: Fine\n D: Diminutive\n T: Tiny\n S: Small\n M: Medium\n L: Large\n H: Huge\n G: Gargantuan\n C: Colossal\n V: Varies.",
-					"enum": [
-						"F",
-						"D",
-						"T",
-						"S",
-						"M",
-						"L",
-						"H",
-						"G",
-						"C",
-						"V"
-					]
+					"$ref": "util.json#/definitions/size"
 				},
 				"weight": {
 					"type": "integer"
@@ -549,12 +523,6 @@
 			"type": "array",
 			"items": {
 				"$ref": "#/definitions/vehicleUpgrade"
-			}
-		},
-		"vehicleShip": {
-			"type": "array",
-			"items": {
-				"$ref": "#/definitions/vehicleShip"
 			}
 		}
 	}

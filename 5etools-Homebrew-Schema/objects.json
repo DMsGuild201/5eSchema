@@ -18,7 +18,7 @@
 					"type": "integer"
 				},
 				"size": {
-					"type": "string"
+					"$ref": "util.json#/definitions/size"
 				},
 				"creatureType": {
 					"$ref": "util.json#/definitions/creatureType"
@@ -76,14 +76,10 @@
 					"$ref": "util.json#/definitions/speed"
 				},
 				"senses": {
-					"oneOf": [
-						{
-							"type": "array",
-							"items": {
-								"type": "string"
-							}
-						}
-					]
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
 				},
 				"resist": {
 					"$ref": "util.json#/definitions/damageResistArray"

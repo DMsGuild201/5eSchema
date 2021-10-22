@@ -20,7 +20,8 @@
 						"type": "integer"
 					},
 					"type": {
-						"type": "string"
+						"type": "string",
+						"examples": ["Diabolical", "Elder Evil", "Elemental"]
 					},
 					"goal": {
 						"type": "object",
@@ -89,7 +90,8 @@
 						"type": "integer"
 					},
 					"type": {
-						"type": "string"
+						"type": "string",
+						"examples": ["Demonic"]
 					},
 					"ability": {
 						"type": "object",

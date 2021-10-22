@@ -26,7 +26,7 @@
 					"$ref": "util.json#/definitions/srd"
 				},
 				"color": {
-					"description": "For homebrew use only.",
+					"description": "For Homebrew use only; HTML hex color code this source should use when displayed on the DM Screen, e.g. 'ff00ff'",
 					"type": "string",
 					"pattern": "^([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$"
 				},

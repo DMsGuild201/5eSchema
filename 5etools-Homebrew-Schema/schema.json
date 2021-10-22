@@ -418,7 +418,7 @@
 			"$ref": "rewards.json#/properties/reward"
 		},
 		"ship": {
-			"$ref": "vehicles.json#/properties/vehicleShip"
+			"$ref": "vehicles.json#/properties/vehicle"
 		},
 		"table": {
 			"$ref": "tables.json#/properties/table"

@@ -16,25 +16,18 @@
 					"type": "integer"
 				},
 				"school": {
-					"anyOf": [
-						{
-							"type": "string",
-							"description": "You can specify you own spell school using the \"spellSchools\" block in the _meta section.\n A: Abjuration\n C: Conjuration\n D: Divination\n E: Enchantment\n V: Evocation\n I: Illusion\n N: Necromancy\n P: Psionic\n T: Transmutation",
-							"enum": [
-								"A",
-								"C",
-								"D",
-								"E",
-								"V",
-								"I",
-								"N",
-								"P",
-								"T"
-							]
-						},
-						{
-							"type": "string"
-						}
+					"type": "string",
+					"description": "You can specify you own spell school using the \"spellSchools\" block in the _meta section.\n A: Abjuration\n C: Conjuration\n D: Divination\n E: Enchantment\n V: Evocation\n I: Illusion\n N: Necromancy\n P: Psionic\n T: Transmutation",
+					"examples": [
+						"A",
+						"C",
+						"D",
+						"E",
+						"V",
+						"I",
+						"N",
+						"P",
+						"T"
 					]
 				},
 				"subschools": {
@@ -56,7 +49,7 @@
 					},
 					"additionalProperties": { "type": "boolean" },
 					"propertyNames": {
-						"pattern": "^[A-Za-z]+$"
+						"pattern": ".*"
 					}
 				},
 				"time": {
@@ -86,22 +79,15 @@
 							"type": "object",
 							"properties": {
 								"type": {
-									"anyOf": [
-										{
-											"type": "string",
-											"enum": [
-												"feet",
-												"miles",
-												"plane",
-												"self",
-												"sight",
-												"touch",
-												"unlimited"
-											]
-										},
-										{
-											"type": "string"
-										}
+									"type": "string",
+									"examples": [
+										"feet",
+										"miles",
+										"plane",
+										"self",
+										"sight",
+										"touch",
+										"unlimited"
 									]
 								},
 								"amount": {
@@ -110,7 +96,7 @@
 								"typeSecondary": {
 									"description": "Homebrew only",
 									"type": "string",
-									"enum": [
+									"examples": [
 										"feet",
 										"miles",
 										"plane",
@@ -320,40 +306,28 @@
 					"type": "array",
 					"uniqueItems": true,
 					"items": {
-						"type": "string",
-						"enum": [
-							"acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"
-						]
+						"$ref": "../util.json#/definitions/dataDamageType"
 					}
 				},
 				"damageResist": {
 					"type": "array",
 					"uniqueItems": true,
 					"items": {
-						"type": "string",
-						"enum": [
-							"acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"
-						]
+						"$ref": "../util.json#/definitions/dataDamageType"
 					}
 				},
 				"damageImmune": {
 					"type": "array",
 					"uniqueItems": true,
 					"items": {
-						"type": "string",
-						"enum": [
-							"acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"
-						]
+						"$ref": "../util.json#/definitions/dataDamageType"
 					}
 				},
 				"damageVulnerable": {
 					"type": "array",
 					"uniqueItems": true,
 					"items": {
-						"type": "string",
-						"enum": [
-							"acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"
-						]
+						"$ref": "../util.json#/definitions/dataDamageType"
 					}
 				},
 				"conditionInflict": {
@@ -501,22 +475,15 @@
 					"type": "object",
 					"properties": {
 						"type": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"type": "string",
-									"enum": [
-										"turn",
-										"round",
-										"minute",
-										"hour",
-										"day",
-										"week",
-										"year"
-									]
-								}
+							"type": "string",
+							"examples": [
+								"turn",
+								"round",
+								"minute",
+								"hour",
+								"day",
+								"week",
+								"year"
 							]
 						},
 						"amount": {
@@ -538,7 +505,7 @@
 					"type": "array",
 					"items": {
 						"type": "string",
-						"enum": ["discharge", "dispel","trigger"]
+						"examples": ["discharge", "dispel","trigger"]
 					}
 				},
 				"condition": {

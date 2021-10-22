@@ -333,7 +333,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "entry.json"
+											"$ref": "#"
 										}
 									},
 									{
@@ -536,8 +536,7 @@
 								"type": "object",
 								"properties": {
 									"number": {
-										"type": "integer",
-										"default": 1
+										"type": "integer"
 									},
 									"faces": {
 										"type": "integer"

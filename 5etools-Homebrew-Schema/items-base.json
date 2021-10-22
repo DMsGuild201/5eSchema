@@ -53,23 +53,11 @@
 						"type": "string"
 					},
 					"type": {
-						"type": "string"
+						"$ref": "util.json#/definitions/itemTypeTags"
 					},
 					"rarity": {
-						"type": "string",
-						"description": "\"None\" is for mundane items. \n\"Unknown\" is for miscellaneous mundane items. \n\"Unknown (Magic)\" is for miscellaneous magical items.",
-						"enum": [
-							"none",
-							"unknown",
-							
-							"common",
-							"uncommon",
-							"rare",
-							"very rare",
-							"legendary",
-							"artifact",
-							"unknown (magic)"
-						]
+						"$ref": "util.json#/definitions/rarity",
+						"not": {"enum": ["varies"]}
 					},
 					"source": {
 						"type": "string"
@@ -81,7 +69,8 @@
 						"type": "integer"
 					},
 					"age": {
-						"type": "string"
+						"type": "string",
+						"examples": ["futuristic", "modern", "renaissance"]
 					},
 					"armor": {
 						"description": "Flag used when merging generic variants",
@@ -90,6 +79,10 @@
 					"axe": {
 						"type": "boolean"
 					},
+					"ammunition": {
+						"type": "boolean",
+						"description": "An item that uses ammunition; not an item that is ammunition."
+					},
 					"dmg1": {
 						"type": "string"
 					},
@@ -97,7 +90,7 @@
 						"type": "string"
 					},
 					"dmgType": {
-						"type": "string"
+						"$ref": "util.json#/definitions/dataDamageTags"
 					},
 					"entries": {
 						"type": "array",
@@ -109,13 +102,8 @@
 						"type": "array",
 						"description": "2H: Two-Handed\n A: Ammunition\n AF: Ammunition (futuristic)\n BF: Burst Fire\n EM: Eldritch Machine\n F: Finesse\n H: Heavy\n L: Light\n LD: Loading\n OTH: Other\n R: Reach\n RLD: Reload\n S: Special\n T: Thrown\n V: Versatile",
 						"items": {
-							"anyOf": [
-								{
-									"type": "string",
-									"enum": ["2H", "A", "AF", "BF", "EM", "F", "H", "L", "LD", "OTH", "R", "RLD", "S", "T", "V"]
-								},
-								{"type": "string"}
-							]
+							"type": "string",
+							"examples": ["2H", "A", "AF", "BF", "EM", "F", "H", "L", "LD", "OTH", "R", "RLD", "S", "T", "V"]
 						}
 					},
 					"range": {
@@ -125,7 +113,8 @@
 						"type": "integer"
 					},
 					"scfType": {
-						"type": "string"
+						"type": "string",
+						"examples": ["arcane", "druid", "holy"]
 					},
 					"stealth": {
 						"type": "boolean"
@@ -182,10 +171,8 @@
 						"type": "boolean"
 					},
 					"weaponCategory": {
-						"anyOf": [
-							{"type": "string", "enum": ["simple", "martial"]},
-							{"type": "string"}
-						]
+						"type": "string",
+						"examples": ["simple", "martial"]
 					},
 					"weight": {
 						"type": "number"
@@ -203,7 +190,8 @@
 						"$ref": "util.json#/definitions/otherSources"
 					},
 					"ammoType": {
-						"type": "string"
+						"type": "string",
+						"examples": ["energy cell", "modern bullet", "blowgun needle|phb", "crossbow bolt|phb", "arrow|phb", "renaissance bullet", "sling bullet|phb"]
 					},
 					"packContents": {
 						"type": "array",

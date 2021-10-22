@@ -20,7 +20,8 @@
 						"type": "integer"
 					},
 					"type": {
-						"type": "string"
+						"type": "string",
+						"examples": ["Blessing", "Boon", "Charm", "Inhabitation", "Other"]
 					},
 					"ability": {
 						"type": "object",

@@ -11,28 +11,13 @@
 					"type": "string"
 				},
 				"type": {
-					"type": "string"
+					"$ref": "util.json#/definitions/itemTypeTags"
 				},
 				"typeAlt": {
-					"type": "string"
+					"$ref": "util.json#/definitions/itemTypeTags"
 				},
 				"rarity": {
-					"type": "string",
-					"description": "\"None\" is for mundane items. \n\"Unknown\" is for miscellaneous mundane items.  \n\"Unknown (Magic)\" is for miscellaneous magical items. \n\"Varies\" is for item groups.",
-					"enum": [
-						"none",
-						"unknown",
-
-						"common",
-						"uncommon",
-						"rare",
-						"very rare",
-						"legendary",
-						"artifact",
-						"unknown (magic)",
-						
-						"varies"
-					]
+					"$ref": "util.json#/definitions/rarity"
 				},
 				"source": {
 					"type": "string"
@@ -54,25 +39,30 @@
 					"type": "string"
 				},
 				"age": {
-					"type": "string"
+					"type": "string",
+					"examples": ["futuristic", "modern", "renaissance"]
 				},
 				"ammunition": {
-					"type": "boolean"
+					"type": "boolean",
+					"description": "An item that uses ammunition; not an item that is ammunition."
 				},
 				"axe": {
 					"type": "boolean"
 				},
 				"carryingCapacity": {
-					"type": "integer"
+					"type": "integer",
+					"description": "Of a mount/beast, not a container."
 				},
 				"dmg1": {
-					"type": "string"
+					"type": "string",
+					"description": "The damage dice of the weapon, e.g. \"1d8\""
 				},
 				"dmg2": {
-					"type": "string"
+					"type": "string",
+					"description": "The versatile or alternative damage dice of the weapon, e.g. \"1d10\""
 				},
 				"dmgType": {
-					"type": "string"
+					"$ref": "util.json#/definitions/dataDamageTags"
 				},
 				"entries": {
 					"type": "array",
@@ -106,25 +96,11 @@
 					"type": ["string", "integer"]
 				},
 				"reqAttune": {
-					"oneOf": [
-						{
-							"type": "string"
-						},
-						{
-							"type": "boolean"
-						}
-					]
+					"type": ["string", "boolean"]
 				},
 				"reqAttuneAlt": {
 					"description": "Used for filtering.",
-					"oneOf": [
-						{
-							"type": "string"
-						},
-						{
-							"type": "boolean"
-						}
-					]
+					"type": ["string", "boolean"]
 				},
 				"curse": {
 					"type": "boolean"
@@ -142,10 +118,12 @@
 					"$ref": "util.json#/definitions/conditionImmunityArray"
 				},
 				"detail1": {
+					"description": "A descriptive field that can be used to complete entries in variants.",
 					"type": "string"
 				},
 				"scfType": {
-					"type": "string"
+					"type": "string",
+					"examples": ["arcane", "druid", "holy"]
 				},
 				"speed": {
 					"type": "integer"
@@ -173,7 +151,7 @@
 				"tier": {
 					"type": "string",
 					"description": "Item Tier as per XGE p135",
-					"enum": ["minor", "major"]
+					"examples": ["minor", "major"]
 				},
 				"value": {
 					"description": "In copper pieces.",
@@ -190,10 +168,8 @@
 					"type": "boolean"
 				},
 				"weaponCategory": {
-					"anyOf": [
-						{"type": "string", "enum": ["simple", "martial"]},
-						{"type": "string"}
-					]
+					"type": "string",
+					"examples": ["simple", "martial"]
 				},
 				"weight": {
 					"type": "number"
@@ -220,7 +196,7 @@
 					"type": "array",
 					"items": {
 						"type": "string",
-						"enum": ["contact", "ingested", "injury", "inhaled"]
+						"examples": ["contact", "ingested", "injury", "inhaled"]
 					}
 				},
 				"crew": {
@@ -320,7 +296,7 @@
 							"type": "array",
 							"items": {
 								"type": "string",
-								"enum": ["Artificer", "Bard", "Cleric", "Druid", "Paladin", "Ranger", "Sorcerer", "Warlock", "Wizard"]
+								"examples": ["Artificer", "Bard", "Cleric", "Druid", "Paladin", "Ranger", "Sorcerer", "Warlock", "Wizard"]
 							}
 						}
 					]
@@ -449,7 +425,8 @@
 					"additionalProperties": false
 				},
 				"ammoType": {
-					"type": "string"
+					"type": "string",
+					"examples": ["energy cell", "modern bullet", "blowgun needle|phb", "crossbow bolt|phb", "arrow|phb", "renaissance bullet", "sling bullet|phb"]
 				},
 				"grantsProficiency": {
 					"type": "boolean"
@@ -461,7 +438,7 @@
 					"$ref": "util.json#/definitions/reqAttuneTags"
 				},
 				"foundryType":{
-					"description": "Homebrew only: used to manually specify the exact Foundry item type an item should be imported as. \n\"CONFIG.Item.typeLabels\"",
+					"description": "Homebrew only: used to manually specify the exact Foundry item type an item should be imported as. \n\"CONFIG.Item.typeLabels\" correct as of v0.8.9",
 					"type": "string",
 					"enum": ["weapon", "equipment", "consumable", "tool", "loot", "class", "spell", "feat", "backpack"]
 				},
