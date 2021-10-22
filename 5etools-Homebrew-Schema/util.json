@@ -2154,7 +2154,7 @@
 			}
 		},
 
-		"additionalSpellsArray": {
+		"reqAttuneTags": {
 			"type": "array",
 			"items": {
 				"type": "object",
