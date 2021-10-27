@@ -138,25 +138,6 @@
 			}
 		},
 
-		"rarity": {
-			"type": "string",
-			"description": "\"None\" is for mundane items. \n\"Unknown\" is for miscellaneous mundane items.  \n\"Unknown (Magic)\" is for miscellaneous magical items. \n\"Varies\" is for item groups; and may not be used in \"baseitem\"s.",
-			"enum": [
-				"none",
-				"unknown",
-
-				"common",
-				"uncommon",
-				"rare",
-				"very rare",
-				"legendary",
-				"artifact",
-				"unknown (magic)",
-
-				"varies"
-			]
-		},
-
 		"itemTypeTags": {
 			"type": "string",
 			"description": "$: Treasure\n A: Ammunition\n AF: Ammunition (futuristic)\n AIR: Vehicle (air)\n AT: Artisan Tool\n EM: Eldritch Machine\n EXP: Explosive\n G: Adventuring Gear\n GS: Gaming Set\n GV: Generic Variant\n HA: Heavy Armor\n INS: Instrument\n LA: Light Armor\n M: Melee Weapon\n MA: Medium Armor\n MNT: Mount\n OTH: Other\n P: Potion\n R: Ranged Weapon\n RD: Rod\n RG: Ring\n S: Shield\n SC: Scroll\n SCF: Spellcasting Focus\n SHP: Vehicle (water)\n T: Tool\n TAH: Tack and Harness\n TG: Trade Good\n VEH: Vehicle (land)\n WD: Wand",
@@ -832,7 +813,7 @@
 				"equal": {
 					"type": "object",
 					"properties": {
-							"walk": {"$ref": "#/definitions/_itemModifySpeedEqual"},
+						"walk": {"$ref": "#/definitions/_itemModifySpeedEqual"},
 						"burrow": {"$ref": "#/definitions/_itemModifySpeedEqual"},
 						"climb":  {"$ref": "#/definitions/_itemModifySpeedEqual"},
 						"fly": {"$ref": "#/definitions/_itemModifySpeedEqual"},
@@ -855,6 +836,39 @@
 			},
 			"additionalProperties": false
 		},
+
+		"rarity": {
+			"type": "string",
+			"enum": [
+				"rare",
+				"uncommon",
+				"very rare",
+				"legendary",
+				"artifact",
+				"common"
+			]
+		},
+
+		"itemRarity": {
+			"anyOf": [
+				{"$ref": "#/definitions/rarity"},
+				{
+					"type": "string",
+					"description": "\"None\" is for mundane items. \"Unknown (Magic)\" is for miscellaneous magical items. \"Unknown\" is for miscellaneous mundane items. \"Varies\" is for item groups.",
+					"enum": [
+						"none",
+						"unknown",
+						"unknown (magic)",
+						"varies"
+					]
+				}
+			]
+		},
+
+		"itemRecharge": {
+			"enum": ["round", "restShort", "restLong", "dawn", "dusk", "midnight", "special"]
+		},
+
 		"prerequisite": {
 			"type": "array",
 			"items": {

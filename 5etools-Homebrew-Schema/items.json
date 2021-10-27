@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items.json",
-	"version": "1.10.8",
+	"version": "1.10.9",
 	"type": "object",
 	"definitions": {
 		"itemData": {
@@ -17,7 +17,7 @@
 					"$ref": "util.json#/definitions/itemTypeTags"
 				},
 				"rarity": {
-					"$ref": "util.json#/definitions/rarity"
+					"$ref": "util.json#/definitions/itemRarity"
 				},
 				"source": {
 					"type": "string"
@@ -240,8 +240,7 @@
 					"type": ["string", "integer"]
 				},
 				"recharge": {
-					"type":	"string",
-					"enum": ["round", "restShort", "restLong", "dawn", "dusk", "midnight", "special"]
+					"$ref": "util.json#/definitions/itemRecharge"
 				},
 				"attachedSpells": {
 					"type": "array",

@@ -1,6 +1,6 @@
 # Current Site Version Compatibility and Provenance
 
-This schema repo is currently updated to support version `1.140.0` of the site.
+This schema repo is currently updated to support version `1.141.0` of the site.
 
 This schema is built from the original 5eTools Site Schema which can be found [here](https://github.com/5etools-mirror-1/5etools-mirror-1.github.io/tree/master/test/schema).
 
