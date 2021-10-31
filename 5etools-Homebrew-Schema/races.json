@@ -103,14 +103,7 @@
 					"$ref": "util.json#/definitions/armorProficiencies"
 				},
 				"fluff": {
-					"oneOf": [
-						{
-							"$ref": "#/definitions/fluff"
-						},
-						{
-							"type": "null"
-						}
-					]
+					"$ref": "#/definitions/fluff"
 				},
 				"overwrite": {
 					"description": "Map of 'property' -> true where 'property' is a property on the base race which should be overwritten by that of the subrace",
@@ -278,14 +271,7 @@
 					"$ref": "util.json#/definitions/armorProficiencies"
 				},
 				"fluff": {
-					"oneOf": [
-						{
-							"$ref": "#/definitions/fluff"
-						},
-						{
-							"type": "null"
-						}
-					]
+					"$ref": "#/definitions/fluff"
 				},
 				"srd": {
 					"$ref": "util.json#/definitions/srd"
@@ -503,12 +489,40 @@
 			]
 		},
 
+		"subrace": {
+			"anyOf": [
+				{
+					"allOf": [
+						{
+							"$ref": "#/definitions/subraceData"
+						},
+						{
+							"required": [
+								"name",
+								"source",
+								"race"
+							]
+						}
+					]
+				},
+				{
+					"allOf": [
+						{
+							"$ref": "#/definitions/subraceData"
+						},
+						{
+							"$ref": "util.json#/definitions/copyBlock"
+						}
+					]
+				}
+			]
+		},
+
 		"fluff": {
 			"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source",
-			"oneOf": [
+			"anyOf": [
 				{
-					"$ref": "util.json#/definitions/fluffObject",
-					"additionalProperties": false
+					"$ref": "util.json#/definitions/fluffObject"
 				},
 				{
 					"description": "References \"raceFluff\" array items",
@@ -536,37 +550,7 @@
 								}
 							}
 						}
-					},
-					"additionalProperties": false
-				}
-			]
-		},
-
-		"subrace": {
-			"anyOf": [
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/subraceData"
-						},
-						{
-							"required": [
-								"name",
-								"source",
-								"race"
-							]
-						}
-					]
-				},
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/subraceData"
-						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
-						}
-					]
+					}
 				}
 			]
 		}
