@@ -1994,7 +1994,10 @@
 					{
 						"type": "object",
 						"properties": {
-							"choose": {"type": "string"},
+							"choose": {
+								"type": "string",
+								"description": "A range of spells to be chosen from, formatted similarly to the options in a {@filter ...} tag. \nFor example: \"level=0|class=Wizard\""
+							},
 							"count": {"type": "integer"}
 						},
 						"required": ["choose"],
