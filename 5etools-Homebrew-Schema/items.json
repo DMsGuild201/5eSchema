@@ -80,13 +80,8 @@
 					"type": "array",
 					"description": "2H: Two-Handed\n A: Ammunition\n AF: Ammunition (futuristic)\n BF: Burst Fire\n EM: Eldritch Machine\n F: Finesse\n H: Heavy\n L: Light\n LD: Loading\n OTH: Other\n R: Reach\n RLD: Reload\n S: Special\n T: Thrown\n V: Versatile",
 					"items": {
-						"anyOf": [
-							{
-								"type": "string",
-								"enum": ["2H", "A", "AF", "BF", "EM", "F", "H", "L", "LD", "OTH", "R", "RLD", "S", "T", "V"]
-							},
-							{"type": "string"}
-						]
+						"type": "string",
+						"examples": ["2H", "A", "AF", "BF", "EM", "F", "H", "L", "LD", "OTH", "R", "RLD", "S", "T", "V"]
 					}
 				},
 				"range": {
@@ -441,10 +436,49 @@
 					"type": "string",
 					"enum": ["weapon", "equipment", "consumable", "tool", "loot", "class", "spell", "feat", "backpack"]
 				},
+				"foundryData": {"$ref": "util.json#/definitions/foundryDataObject"},
+				"foundryEffects": {"type": "array", "items": {"$ref": "util.json#/definitions/foundryEffectObject"}},
+				"fluff": {
+					"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source.",
+					"anyOf": [
+						{
+							"$ref": "util.json#/definitions/fluffObject"
+						},
+						{
+							"description": "References \"itemFluff\" array items",
+							"type": "object",
+							"properties": {
+								"_itemFluff": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"source": {
+											"type": "string"
+										}
+									}
+								},
+								"_appendItemFluff": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"source": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					]
+				},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"},
 				"hasRefs": {"type": "boolean"}
-			}
+			},
+			"additionalProperties": false
 		},
 
 		"item": {
@@ -493,5 +527,6 @@
 		"_meta": {
 			"$ref": "util.json#/definitions/metaBlock"
 		}
-	}
+	},
+	"additionalProperties": false
 }

@@ -350,7 +350,8 @@
 					"type": "boolean"
 				},
 				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"}
+				"hasFluffImages": {"type": "boolean"},
+				"foundryData": {"$ref": "util.json#/definitions/foundryDataObject"}
 			},
 			"required": ["name", "source"],
 			"additionalProperties": false
