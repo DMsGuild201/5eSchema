@@ -505,7 +505,7 @@
 					"type": "array",
 					"items": {
 						"type": "string",
-						"description": "The examples given are short forms that are automatically expanded to \"discharged\", \"dispelled\" & \"triggered\".\nHomebrew files should state end conditions in full.",
+						"description": "The examples given are short forms that are automatically expanded to \"discharged\", \"dispelled\" & \"triggered\".\nHomebrew files should state custom end conditions in full.",
 						"examples": ["discharge", "dispel", "trigger"]
 					}
 				},
