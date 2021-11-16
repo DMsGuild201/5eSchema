@@ -37,7 +37,7 @@
 						"type": "string"
 					},
 					"contents": {
-						"description": "The linked Table of Contents of the adventure.",
+						"description": "The linked Table of Contents of the rulebook.",
 						"type": "array",
 						"items": {
 							"type": "object",
