@@ -526,5 +526,6 @@
 				"$ref": "#/definitions/vehicleUpgrade"
 			}
 		}
-	}
+	},
+	"additionalProperties": false
 }

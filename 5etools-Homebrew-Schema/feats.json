@@ -137,5 +137,6 @@
 			}
 		}
 	},
-	"required": ["feat"]
+	"required": ["feat"],
+	"additionalProperties": false
 }

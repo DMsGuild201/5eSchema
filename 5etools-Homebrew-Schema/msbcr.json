@@ -55,5 +55,6 @@
 	},
 	"required": [
 		"cr"
-	]
+	],
+	"additionalProperties": false
 }

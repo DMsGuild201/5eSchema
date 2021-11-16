@@ -138,5 +138,6 @@
 				"$ref": "#/definitions/object"
 			}
 		}
-	}
+	},
+	"additionalProperties": false
 }

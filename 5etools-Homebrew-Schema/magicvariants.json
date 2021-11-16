@@ -299,7 +299,8 @@
 				"required": [
 					"name",
 					"inherits"
-				]
+				],
+				"additionalProperties": false
 			}
 		},
 		"linkedLootTables": {
@@ -313,5 +314,6 @@
 	},
 	"required": [
 		"variant"
-	]
+	],
+	"additionalProperties": false
 }

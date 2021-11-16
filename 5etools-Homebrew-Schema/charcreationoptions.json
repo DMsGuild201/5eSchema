@@ -68,5 +68,6 @@
 			"type": "array",
 			"items": {"$ref": "#/definitions/charoption"}
 		}
-	}
+	},
+	"additionalProperties": false
 }

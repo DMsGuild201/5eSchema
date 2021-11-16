@@ -403,7 +403,8 @@
 				},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"}
-			}
+			},
+			"additionalProperties": false
 		},
 
 		"spell": {
@@ -570,5 +571,6 @@
 	},
 	"required": [
 		"spell"
-	]
+	],
+	"additionalProperties": false
 }

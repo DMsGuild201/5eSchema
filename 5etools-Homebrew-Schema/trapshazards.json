@@ -208,5 +208,6 @@
 				"$ref": "#/definitions/hazard"
 			}
 		}
-	}
+	},
+	"additionalProperties": false
 }

@@ -138,5 +138,6 @@
 	"required": [
 		"cult",
 		"boon"
-	]
+	],
+	"additionalProperties": false
 }

@@ -112,5 +112,6 @@
 			"type": "array",
 			"items": {"$ref": "#/definitions/optionalfeature"}
 		}
-	}
+	},
+	"additionalProperties": false
 }

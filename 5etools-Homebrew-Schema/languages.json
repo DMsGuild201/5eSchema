@@ -91,5 +91,6 @@
 	},
 	"required": [
 		"language"
-	]
+	],
+	"additionalProperties": false
 }

@@ -37,7 +37,8 @@
 						"$ref": "../entry.json"
 					}
 				}
-			}
+			},
+			"additionalProperties": false
 		},
 
 		"legendaryGroup": {
@@ -77,5 +78,6 @@
 			"items": {"$ref": "#/definitions/legendaryGroup"}
 		}
 	},
-	"required": ["legendaryGroup"]
+	"required": ["legendaryGroup"],
+	"additionalProperties": false
 }

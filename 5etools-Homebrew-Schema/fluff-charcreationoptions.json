@@ -32,5 +32,6 @@
 				"additionalProperties": false
 			}
 		}
-	}
+	},
+	"additionalProperties": false
 }

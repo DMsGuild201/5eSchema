@@ -11,6 +11,7 @@
 			"items": {"$ref": "#/definitions/variantrule"}
 		}
 	},
+	"additionalProperties": false,
 	"required": ["variantrule"],
 	"definitions": {
 		"variantrule": {

@@ -37,5 +37,6 @@
 		"reducedItemType": {
 			"$ref": "#/definitions/itemLookup"
 		}
-	}
+	},
+	"additionalProperties": false
 }

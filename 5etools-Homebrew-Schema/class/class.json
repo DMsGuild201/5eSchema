@@ -765,5 +765,6 @@
 			"type": "array",
 			"items": {"$ref": "#/definitions/subclassFeature"}
 		}
-	}
+	},
+	"additionalProperties": false
 }

@@ -163,5 +163,6 @@
 		"_meta": {
 			"$ref": "util.json#/definitions/metaBlock"
 		}
-	}
+	},
+	"additionalProperties": false
 }

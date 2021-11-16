@@ -50,5 +50,6 @@
 	},
 	"required": [
 		"monsterfeatures"
-	]
+	],
+	"additionalProperties": false
 }
