@@ -3,12 +3,32 @@
 	"$id": "adventure.json",
 	"version": "1.0.0",
 	"type": "object",
+	
+	"definitions": {
+		"adventureBook": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"source": {
+					"type": "string"
+				},
+				"data": {
+					"type": "array",
+					"$comment": "This is a typical entries array but it is not validated for performance reasons."
+				}
+			}
+		}
+	},
+
 	"properties": {
 		"data": {
 			"type": "array",
 			"items": {
-				"$ref": "../entry.json"
+				"$ref": "#/definitions/adventureBook"
 			}
 		}
-	}
+	},
+	"additionalProperties": false
 }

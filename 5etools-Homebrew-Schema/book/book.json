@@ -11,11 +11,12 @@
 				"id": {
 					"type": "string"
 				},
-				"entries": {
+				"source": {
+					"type": "string"
+				},
+				"data": {
 					"type": "array",
-					"items": {
-						"$ref": "../entry.json"
-					}
+					"$comment": "This is a typical entries array but it is not validated for performance reasons."
 				}
 			}
 		}
@@ -28,5 +29,6 @@
 				"$ref": "#/definitions/ruleBook"
 			}
 		}
-	}
+	},
+	"additionalProperties": false
 }

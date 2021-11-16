@@ -20,7 +20,8 @@
 						"type": "string"
 					},
 					"parentSource": {
-						"type": "string"
+						"type": "string",
+						"description": "Used for books that contain multiple adventures, e.g. TftYP"
 					},
 					"group": {
 						"description": "The group under which this adventure should be listed in the navbar.",
@@ -34,7 +35,7 @@
 					"alLength": {
 						"description": "Adventurers League length (in hours); for use in homebrew.",
 						"type": "object",
-						"anyOf": [
+						"oneOf": [
 							{
 								"properties": {
 									"min": {"type": "integer"},
@@ -53,6 +54,7 @@
 						"type": "string"
 					},
 					"contents": {
+						"description": "The linked Table of Contents of the adventure.",
 						"type": "array",
 						"items": {
 							"type": "object",
@@ -113,6 +115,7 @@
 						}
 					},
 					"level": {
+						"description": "The character levels that the adventure ranges across.",
 						"oneOf": [
 							{
 								"type": "object",
@@ -196,9 +199,11 @@
 					"contents",
 					"level",
 					"published",
-					"storyline"
+					"storyline",
+					"group"
 				]
 			}
 		}
-	}
+	},
+	"additionalProperties": false
 }
