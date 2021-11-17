@@ -4,7 +4,7 @@
 	"version": "1.10.10",
 	"type": "object",
 	"definitions": {
-		"itemData": {
+		"item": {
 			"type": "object",
 			"properties": {
 				"name": {
@@ -477,38 +477,18 @@
 				},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"},
-				"hasRefs": {"type": "boolean"}
+				"hasRefs": {"type": "boolean"},
+				"_copy": {"$ref": "util.json#/definitions/copyBlock/properties/_copy"}
 			},
-			"additionalProperties": false
-		},
-
-		"item": {
-			"anyOf": [
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/itemData"
-						},
-						{
-							"required": [
-								"name",
-								"rarity",
-								"source"
-							]
-						}
-					]
-				},
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/itemData"
-						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
-						}
-					]
-				}
-			]
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": [
+					"name",
+					"rarity",
+					"source"
+				]
+			}
 		}
 	},
 	"properties": {

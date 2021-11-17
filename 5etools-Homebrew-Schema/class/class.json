@@ -231,38 +231,6 @@
 		},
 
 		"subclass": {
-			"anyOf": [
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/subclassData"
-						},
-						{
-							"required": [
-								"name",
-								"shortName",
-								"source",
-								"className",
-								"classSource",
-								"subclassFeatures"
-							]
-						}
-					]
-				},
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/subclassData"
-						},
-						{
-							"$ref": "../util.json#/definitions/copyBlock"
-						}
-					]
-				}
-			]
-		},
-
-		"subclassData": {
 			"description" : "A character subclass",
 			"type": "object",
 			"properties": {
@@ -360,9 +328,21 @@
 							"items": {"$ref": "#/definitions/spellRef"}
 						}
 					}
-				}
+				},
+				"_copy": {"$ref": "../util.json#/definitions/copyBlock/properties/_copy"}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": [
+					"name",
+					"shortName",
+					"source",
+					"className",
+					"classSource",
+					"subclassFeatures"
+				]
+			}
 		},
 
 		"requirements": {
@@ -424,35 +404,6 @@
 		},
 
 		"class": {
-			"anyOf": [
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/classData"
-						},
-						{
-							"required": [
-								"name",
-								"source",
-								"classFeatures"
-							]
-						}
-					]
-				},
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/classData"
-						},
-						{
-							"$ref": "../util.json#/definitions/copyBlock"
-						}
-					]
-				}
-			]
-		},
-
-		"classData": {
 			"description" : "A character class",
 
 			"type": "object",
@@ -692,9 +643,18 @@
 					"description": "Homebrew use only; adds custom classes to lists in spells.\nDoes not enable VTT import - use \"additionalSpells\" as well.",
 					"type": "array",
 					"items": {"$ref": "#/definitions/spellRef"}
-				}
+				},
+				"_copy": {"$ref": "../util.json#/definitions/copyBlock/properties/_copy"}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": [
+					"name",
+					"source",
+					"classFeatures"
+				]
+			}
 		},
 
 		"spellRef": {

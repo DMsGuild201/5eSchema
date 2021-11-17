@@ -5,7 +5,7 @@
 	"type": "object",
 
 	"definitions": {
-		"raceFluffData": {
+		"raceFluff": {
 			"type": "object",
 			"properties": {
 				"name": {
@@ -38,35 +38,14 @@
 				},
 				"monstrous": {
 					"type": "boolean"
-				}
-			},
-			"additionalProperties": false
-		},
-
-		"raceFluff": {
-			"anyOf": [
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/raceFluffData"
-						},
-						{
-							"required": ["name", "source"]
-						}
-					]
 				},
-				{
-					"$comment": "This is a custom pre-processor tag, which merges together the array of objects into one. This allows proper inheritance, which JSON schema don't really do.",
-					"allOf": [
-						{
-							"$ref": "#/definitions/raceFluffData"
-						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
-						}
-					]
-				}
-			]
+				"_copy": {"$ref": "util.json#/definitions/copyBlock/properties/_copy"}
+			},
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": ["name", "source"]
+			}
 		}
 	},
 

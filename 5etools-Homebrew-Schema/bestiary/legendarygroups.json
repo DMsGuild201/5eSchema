@@ -4,7 +4,7 @@
 	"version": "1.2.1",
 	"type": "object",
 	"definitions": {
-		"legendaryGroupData": {
+		"legendaryGroup": {
 			"type": "object",
 			"properties": {
 				"name": {
@@ -36,37 +36,17 @@
 					"items": {
 						"$ref": "../entry.json"
 					}
-				}
-			},
-			"additionalProperties": false
-		},
-
-		"legendaryGroup": {
-			"anyOf": [
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/legendaryGroupData"
-						},
-						{
-							"required": [
-								"name",
-								"source"
-							]
-						}
-					]
 				},
-				{
-					"allOf": [
-						{
-						"$ref": "#/definitions/legendaryGroupData"
-						},
-						{
-						"$ref": "../util.json#/definitions/copyBlock"
-						}
-					]
-				}
-			]
+				"_copy": {"$ref": "../util.json#/definitions/copyBlock/properties/_copy"}
+			},
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": [
+					"name",
+					"source"
+				]
+			}
 		}
 	},
 

@@ -6,7 +6,7 @@
 	"type": "object",
 
 	"definitions": {
-		"spellData": {
+		"spell": {
 			"type": "object",
 			"properties": {
 				"name": {
@@ -402,43 +402,23 @@
 					]
 				},
 				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"}
+				"hasFluffImages": {"type": "boolean"},
+				"_copy": {"$ref": "../util.json#/definitions/copyBlock/properties/_copy"}
 			},
-			"additionalProperties": false
-		},
-
-		"spell": {
-			"anyOf": [
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/spellData"
-						},
-						{
-							"required": [
-								"name",
-								"level",
-								"school",
-								"time",
-								"range",
-								"duration",
-								"entries",
-								"source"
-							]
-						}
-					]
-				},
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/spellData"
-						},
-						{
-							"$ref": "../util.json#/definitions/copyBlock"
-						}
-					]
-				}
-			]
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": [
+					"name",
+					"level",
+					"school",
+					"time",
+					"range",
+					"duration",
+					"entries",
+					"source"
+				]
+			}
 		},
 
 		"time": {

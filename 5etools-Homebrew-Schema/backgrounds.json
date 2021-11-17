@@ -5,7 +5,7 @@
 	"type": "object",
 
 	"definitions": {
-		"backgroundData": {
+		"background": {
 			"type": "object",
 			"properties": {
 				"name": {
@@ -48,38 +48,19 @@
 					"$ref": "util.json#/definitions/additionalSpellsArray"
 				},
 				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"}
+				"hasFluffImages": {"type": "boolean"},
+				"_copy": {"$ref": "util.json#/definitions/copyBlock/properties/_copy"}
+			},
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": [
+					"name",
+					"source",
+					"skillProficiencies",
+					"entries"
+				]
 			}
-		},
-
-		"background": {
-			"anyOf": [
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/backgroundData"
-						},
-						{
-							"required": [
-								"name",
-								"source",
-								"skillProficiencies",
-								"entries"
-							]
-						}
-					]
-				},
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/backgroundData"
-						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
-						}
-					]
-				}
-			]
 		}
 	},
 
@@ -97,5 +78,6 @@
 	},
 	"required": [
 		"background"
-	]
+	],
+	"additionalProperties": false
 }

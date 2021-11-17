@@ -5,7 +5,7 @@
 	"type": "object",
 
 	"definitions": {
-		"subraceData": {
+		"subrace": {
 			"type": "object",
 			"properties": {
 				"name": {
@@ -18,7 +18,7 @@
 					}
 				},
 				"race": {
-					"description": "For use in homebrew files featuring standalone subraces of existing full races.",
+					"description": "For use ONLY in homebrew standalone subraces of existing full races.",
 					"type": "object",
 					"properties": {
 						"name": {
@@ -175,12 +175,20 @@
 				"age": {"$ref": "#/definitions/age"},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"},
-				"_versions": {"$ref": "util.json#/definitions/versionsArray"}
+				"_versions": {"$ref": "util.json#/definitions/versionsArray"},
+				"_copy": {"$ref": "util.json#/definitions/copyBlock/properties/_copy"}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": [
+					"name",
+					"source"
+				]
+			}
 		},
 
-		"raceData": {
+		"race": {
 			"type": "object",
 			"properties": {
 				"name": {
@@ -228,7 +236,7 @@
 				"subraces": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/subraceData"
+						"$ref": "#/definitions/subrace"
 					}
 				},
 				"darkvision": {
@@ -331,9 +339,17 @@
 				"age": {"$ref": "#/definitions/age"},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"},
-				"_versions": {"$ref": "util.json#/definitions/versionsArray"}
+				"_versions": {"$ref": "util.json#/definitions/versionsArray"},
+				"_copy": {"$ref": "util.json#/definitions/copyBlock/properties/_copy"}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": [
+					"name",
+					"source"
+				]
+			}
 		},
 
 		"traitTag": {
@@ -463,64 +479,6 @@
 			}
 		},
 
-		"race": {
-			"anyOf": [
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/raceData"
-						},
-						{
-							"required": [
-								"name",
-								"source"
-							]
-						}
-					]
-				},
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/raceData"
-						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
-						}
-					]
-				}
-			]
-		},
-
-		"subrace": {
-			"description": "Homebrew use only.",
-			"anyOf": [
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/subraceData"
-						},
-						{
-							"required": [
-								"name",
-								"source",
-								"race"
-							]
-						}
-					]
-				},
-				{
-					"allOf": [
-						{
-							"$ref": "#/definitions/subraceData"
-						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
-						}
-					]
-				}
-			]
-		},
-
 		"fluff": {
 			"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source",
 			"anyOf": [
@@ -569,7 +527,8 @@
 		"subrace": {
 			"type": "array",
 			"items": {
-				"$ref": "#/definitions/subrace"
+				"$ref": "#/definitions/subrace",
+				"required": ["race"]
 			}
 		},
 		"_meta": {
