@@ -340,8 +340,8 @@
 					]
 				},
 				"fluff": {
-					"$ref": "util.json#/definitions/fluffObject",
-					"additionalProperties": false
+					"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source",
+					"$ref": "util.json#/definitions/fluffObject"
 				},
 				"tokenUrl": {
 					"type": "string"

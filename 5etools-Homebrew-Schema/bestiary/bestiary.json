@@ -667,9 +667,6 @@
 					"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source",
 					"anyOf": [
 						{
-							"$ref": "../util.json#/definitions/fluffObject"
-						},
-						{
 							"description": "Reference \"monsterFluff\" array items",
 							"type": "object",
 							"properties": {
@@ -696,6 +693,9 @@
 									}
 								}
 							}
+						},
+						{
+							"$ref": "../util.json#/definitions/fluffObject"
 						}
 					]
 				},

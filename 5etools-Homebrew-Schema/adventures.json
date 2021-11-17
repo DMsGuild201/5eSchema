@@ -40,12 +40,14 @@
 								"properties": {
 									"min": {"type": "integer"},
 									"max": {"type": "integer"}
-								}
+								},
+								"required": ["min", "max"]
 							},
 							{
 								"properties": {
 									"exact": {"type": "integer"}
-								}
+								},
+								"required": ["exact"]
 							}
 						]
 					},
