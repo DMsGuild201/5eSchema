@@ -459,11 +459,14 @@
 			"$comment": "This validates source and id, but not data for performance reasons."
 		},
 		"$schema": {
-			"description": "An optional key that allows you specify the schema you want to verify against.\nIt is strongly advised that you eave this key out when submitting to the repo.\nTo reduce work it is advised that you set up your environment to use the same schema for all homebrew files.",
+			"description": "An optional key that allows you specify the schema you want to verify against.\nIt is strongly advised that you leave this key out when submitting to the repo.\nTo reduce work it is advised that you set up your environment to use the same schema for all homebrew files.",
 			"type": "string"
 		},
 		"vehicle": {
 			"$ref": "vehicles.json#/properties/vehicle"
+		},
+		"vehicleUpgrade": {
+			"$ref": "vehicles.json#/properties/vehicleUpgrade"
 		},
 		"action": {
 			"$ref": "actions.json#/properties/action"

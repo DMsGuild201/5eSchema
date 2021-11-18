@@ -47,7 +47,7 @@
 					"$ref": "#/definitions/abilityScores"
 				},
 				"size": {
-					"description": "If used in a subrace you must ensure you've set \"overwrite\": to include \"size\"",
+					"description": "For subraces also include \"size\" in the \"overwrite\": key.",
 					"type": "array",
 					"items": {
 						"$ref": "util.json#/definitions/size"

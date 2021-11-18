@@ -47,6 +47,7 @@
 						"Norse",
 						"Orc",
 						"Theros",
+
 						"Unknown"
 					]
 				},
@@ -71,13 +72,14 @@
 							"Tempest",
 							"Trickery",
 							"Twilight",
-							"Unknown",
-							"War"
+							"War",
+
+							"Unknown"
 						]
 					}
 				},
 				"province": {
-					"description": "The nouveau form of 'title,' first seen in MTF",
+					"description": "The nouveau form of 'title', first seen in MTF",
 					"type": "string"
 				},
 				"symbol": {

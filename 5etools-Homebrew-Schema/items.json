@@ -491,6 +491,7 @@
 			}
 		}
 	},
+
 	"properties": {
 		"item": {
 			"type": "array",

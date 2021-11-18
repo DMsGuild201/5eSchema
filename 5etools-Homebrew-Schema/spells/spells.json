@@ -47,9 +47,11 @@
 							"type": "boolean"
 						}
 					},
-					"additionalProperties": { "type": "boolean" },
-					"propertyNames": {
-						"pattern": ".*"
+					"patternProperties": {
+						".*": {
+							"description": "This is a custom homebrew property.",
+							"type": "boolean"
+						}
 					}
 				},
 				"time": {

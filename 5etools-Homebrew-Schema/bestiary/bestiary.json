@@ -8,8 +8,7 @@
 		"align": {
 			"oneOf": [
 				{
-					"$ref": "../util.json#/definitions/alignment",
-					"description": "L: Lawful\n N: Neutral\n NX: Neutral (law/chaos axis)\n NY: Neutral (good/evil axis)\n C: Chaotic\n G: Good\n E: Evil\n U: Unaligned\n A: Any"
+					"$ref": "../util.json#/definitions/alignment"
 				},
 				{
 					"type": "object",
@@ -121,7 +120,6 @@
 									"$ref": "../util.json#/definitions/creatureType"
 								},
 								"swarmSize": {
-									"type": "string",
 									"$ref": "../util.json#/definitions/size",
 									"description": "Size of the individual creatures that make up the swarm."
 								},
@@ -186,7 +184,7 @@
 					}
 				},
 				"alignment": {
-					"type": ["array", "null"],
+					"type": "array",
 					"items": {
 						"$ref": "#/definitions/align"
 					}
@@ -210,6 +208,7 @@
 									"type": "string"
 								}
 							},
+							"required": ["average", "formula"],
 							"additionalProperties": false
 						},
 						{
@@ -369,7 +368,7 @@
 					]
 				},
 				"passive": {
-					"type": ["integer", "string"]
+					"type": ["integer", "string", "null"]
 				},
 				"languages": {
 					"oneOf": [
@@ -893,7 +892,8 @@
 					"con",
 					"int",
 					"wis",
-					"cha"
+					"cha",
+					"passive"
 				]
 			}
 		},
@@ -944,6 +944,7 @@
 		},
 
 		"entryVariantBestiary": {
+			"$comment": "entryVariant and entryInset will always preclude each other as they have different const requirements. Neither variantToken nor variantVersion have additionalProperties:false at their top level so they pass independently. No merging is apparently needed to validate these structures.",
 			"allOf": [
 				{"$ref": "#/definitions/variantToken"},
 				{"$ref": "#/definitions/variantVersion"}

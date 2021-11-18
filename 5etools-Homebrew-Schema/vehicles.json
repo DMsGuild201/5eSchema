@@ -42,7 +42,10 @@
 				},
 				"upgradeType": {
 					"type": "array",
-					"items": {"$ref": "util.json#/definitions/dataOptionalfeatureType"}
+					"items": {
+						"$ref": "util.json#/definitions/dataOptionalfeatureType",
+						"pattern": "^SHP.*|^IWM.*"
+					}
 				},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"}
