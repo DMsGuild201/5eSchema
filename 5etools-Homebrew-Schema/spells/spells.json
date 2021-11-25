@@ -37,6 +37,9 @@
 						"type": "string"
 					}
 				},
+				"roll20Spell": {
+					"$ref": "roll20.json#/properties/spell"
+				},
 				"meta": {
 					"type": "object",
 					"properties": {
