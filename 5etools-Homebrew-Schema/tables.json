@@ -32,10 +32,18 @@
 								"properties": {
 									"type": {
 										"type": "string",
-										"enum": ["chapter", "appendix", "part", "episode"]
+										"enum": [
+											"chapter",
+											"appendix",
+											"part",
+											"episode"
+										]
 									},
 									"identifier": {
-										"type": ["integer", "string"]
+										"type": [
+											"integer",
+											"string"
+										]
 									}
 								},
 								"additionalProperties": false,
@@ -79,13 +87,6 @@
 							"type": "string"
 						}
 					},
-					"intro": {
-						"description": "Primarily for homebrew use.",
-						"type": "array",
-						"items": {
-							"$ref": "entry.json"
-						}
-					},
 					"rows": {
 						"type": "array",
 						"items": {
@@ -93,13 +94,6 @@
 							"items": {
 								"$ref": "entry.json"
 							}
-						}
-					},
-					"outro": {
-						"description": "Primarily for homebrew use.",
-						"type": "array",
-						"items": {
-							"$ref": "entry.json"
 						}
 					},
 					"footnotes": {
@@ -110,9 +104,27 @@
 					},
 					"data": {
 						"type": "object"
+					},
+					"intro": {
+						"description": "Primarily for homebrew use.",
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
+						}
+					},
+					"outro": {
+						"description": "Primarily for homebrew use.",
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
+						}
 					}
 				},
-				"required": ["name", "source", "rows"],
+				"required": [
+					"name",
+					"source",
+					"rows"
+				],
 				"additionalProperties": false
 			}
 		}

@@ -1,12 +1,10 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "util.json",
-
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.10.0",
-
-	"definitions" : {
+	"version": "1.11.1",
+	"definitions": {
 		"metaBlock": {
 			"type": "object",
 			"properties": {
@@ -15,7 +13,9 @@
 					"properties": {
 						"monster": {
 							"type": "array",
-							"items": {"type": "string"}
+							"items": {
+								"type": "string"
+							}
 						}
 					}
 				},
@@ -30,7 +30,6 @@
 				}
 			}
 		},
-
 		"otherSources": {
 			"type": "array",
 			"items": {
@@ -49,7 +48,6 @@
 				"additionalProperties": false
 			}
 		},
-
 		"additionalSources": {
 			"type": "array",
 			"items": {
@@ -68,7 +66,6 @@
 				"additionalProperties": false
 			}
 		},
-
 		"languageNameLower": {
 			"type": "string",
 			"enum": [
@@ -97,7 +94,6 @@
 				"undercommon"
 			]
 		},
-
 		"languageProficiencies": {
 			"type": "array",
 			"items": {
