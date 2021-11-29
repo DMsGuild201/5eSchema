@@ -1,17 +1,20 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "charcreationoptions.json",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"title": "Character Creation Options",
 	"type": "object",
-
 	"definitions": {
 		"optionType": {
-			"description": "DG: Dark Gift\n OF: Optional Feature\n RF:B Replacement Feature: Background\n SG: Supernatural Gift",
 			"type": "string",
-			"examples":  ["DG", "OF", "RF:B", "SG"]
+			"description": "DG: Dark Gift\n OF: Optional Feature\n RF:B Replacement Feature: Background\n SG: Supernatural Gift",
+			"examples": [
+				"DG",
+				"OF",
+				"RF:B",
+				"SG"
+			]
 		},
-
 		"charoption": {
 			"type": "object",
 			"properties": {
@@ -50,8 +53,12 @@
 				"srd": {
 					"$ref": "util.json#/definitions/srd"
 				},
-				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"}
+				"hasFluff": {
+					"type": "boolean"
+				},
+				"hasFluffImages": {
+					"type": "boolean"
+				}
 			},
 			"required": [
 				"name",
@@ -62,11 +69,12 @@
 			"additionalProperties": false
 		}
 	},
-
 	"properties": {
 		"charoption": {
 			"type": "array",
-			"items": {"$ref": "#/definitions/charoption"}
+			"items": {
+				"$ref": "#/definitions/charoption"
+			}
 		}
 	},
 	"additionalProperties": false

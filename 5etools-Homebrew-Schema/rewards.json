@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "rewards.json",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"type": "object",
 	"properties": {
 		"reward": {
@@ -21,7 +21,14 @@
 					},
 					"type": {
 						"type": "string",
-						"examples": ["Blessing", "Boon", "Charm", "Inhabitation", "Other"]
+						"examples": [
+							"Blessing",
+							"Boon",
+							"Charm",
+							"Draconic Gift",
+							"Inhabitation",
+							"Other"
+						]
 					},
 					"ability": {
 						"type": "object",

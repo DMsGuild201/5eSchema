@@ -1,27 +1,29 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "book.json",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"type": "object",
-
 	"definitions": {
 		"ruleBook": {
 			"type": "object",
 			"properties": {
+				"entries": {
+					"type": "array",
+					"$comment": "This is a typical entries array but it is not validated for performance reasons."
+				},
 				"id": {
 					"type": "string"
 				},
 				"source": {
 					"type": "string"
-				},
-				"data": {
-					"type": "array",
-					"$comment": "This is a typical entries array but it is not validated for performance reasons."
 				}
-			}
+			},
+			"required": [
+				"id",
+				"source"
+			]
 		}
 	},
-
 	"properties": {
 		"data": {
 			"type": "array",

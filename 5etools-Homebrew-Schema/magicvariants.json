@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "magicvariants.json",
-	"version": "1.4.7",
+	"version": "1.5.1",
 	"type": "object",
 	"properties": {
 		"variant": {
@@ -14,7 +14,7 @@
 						"type": "string"
 					},
 					"type": {
-						"$ref": "util.json#/definitions/itemTypeTags"
+						"$ref": "shared-items.json#/definitions/itemType"
 					},
 					"entries": {
 						"type": "array",
@@ -27,20 +27,48 @@
 						"items": {
 							"type": "object",
 							"properties": {
-								"ammunition": {"type": "boolean"},
-								"armor": {"type": "boolean"},
-								"axe": {"type": "boolean"},
-								"bow": {"type": "boolean"},
-								"crossbow": {"type": "boolean"},
-								"sword": {"type": "boolean"},
-								"weapon": {"type": "boolean"},
-								"dmgType": {"$ref": "util.json#/definitions/dataDamageTags"},
-								"name": {"type": "string"},
-								"source": {"type": "string"},
-								"type": {"$ref": "util.json#/definitions/itemTypeTags"},
-								"scfType": {"type": "string", "examples": ["arcane", "druid", "holy"]},
-								"net": {"type": "boolean"},
-								"weaponCategory": {"type": "string", "examples": ["simple", "martial"]}
+								"ammunition": {
+									"type": "boolean"
+								},
+								"armor": {
+									"type": "boolean"
+								},
+								"axe": {
+									"type": "boolean"
+								},
+								"bow": {
+									"type": "boolean"
+								},
+								"crossbow": {
+									"type": "boolean"
+								},
+								"sword": {
+									"type": "boolean"
+								},
+								"weapon": {
+									"type": "boolean"
+								},
+								"dmgType": {
+									"$ref": "util.json#/definitions/dataDamageTags"
+								},
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								},
+								"type": {
+									"$ref": "shared-items.json#/definitions/itemType"
+								},
+								"scfType": {
+									"$ref": "shared-items.json#/definitions/itemScfType"
+								},
+								"net": {
+									"type": "boolean"
+								},
+								"weaponCategory": {
+									"$ref": "shared-items.json#/definitions/itemWeaponCategory"
+								}
 							},
 							"additionalProperties": false
 						}
@@ -50,7 +78,7 @@
 						"properties": {
 							"type": {
 								"description": "Generally this should be omitted, as the type of the base item will be used.",
-								"$ref": "util.json#/definitions/itemTypeTags"
+								"$ref": "shared-items.json#/definitions/itemType"
 							},
 							"bonusAc": {
 								"type": "string"
@@ -74,16 +102,18 @@
 								"type": "string"
 							},
 							"modifySpeed": {
-								"$ref": "util.json#/definitions/itemModifySpeed"
+								"$ref": "shared-items.json#/definitions/itemModifySpeed"
 							},
 							"tier": {
-								"type": "string",
-								"description": "Item Tier as per XGE p135",
-								"examples": ["minor", "major"]
+								"$ref": "shared-items.json#/definitions/itemTier"
 							},
 							"rarity": {
-								"$ref": "util.json#/definitions/itemRarity",
-								"not": {"enum": ["varies"]}
+								"$ref": "shared-items.json#/definitions/itemRarity",
+								"not": {
+									"enum": [
+										"varies"
+									]
+								}
 							},
 							"source": {
 								"type": "string"
@@ -101,7 +131,10 @@
 								"type": "string"
 							},
 							"reqAttune": {
-								"type": ["string", "boolean"]
+								"type": [
+									"string",
+									"boolean"
+								]
 							},
 							"curse": {
 								"type": "boolean"
@@ -122,7 +155,10 @@
 								"type": "boolean"
 							},
 							"strength": {
-								"type": ["string", "null"]
+								"type": [
+									"string",
+									"null"
+								]
 							},
 							"wondrous": {
 								"type": "boolean"
@@ -134,10 +170,13 @@
 								}
 							},
 							"charges": {
-								"type": ["string", "integer"]
+								"type": [
+									"string",
+									"integer"
+								]
 							},
 							"recharge": {
-								"$ref": "util.json#/definitions/itemRecharge"
+								"$ref": "shared-items.json#/definitions/itemRecharge"
 							},
 							"attachedSpells": {
 								"type": "array",
@@ -168,6 +207,9 @@
 							},
 							"srd": {
 								"$ref": "util.json#/definitions/srd"
+							},
+							"basicRules": {
+								"$ref": "util.json#/definitions/basicRules"
 							},
 							"otherSources": {
 								"$ref": "util.json#/definitions/otherSources"
@@ -231,11 +273,9 @@
 									}
 								]
 							},
-							"weaponCategory": {
-								"type": "string",
-								"examples": ["simple", "martial"]
-							},
-							"hasRefs": {"type": "boolean"}
+							"hasRefs": {
+								"type": "boolean"
+							}
 						},
 						"required": [
 							"rarity",
@@ -276,7 +316,10 @@
 						"type": "boolean"
 					},
 					"charges": {
-						"type": ["string", "integer"]
+						"type": [
+							"string",
+							"integer"
+						]
 					},
 					"attachedSpells": {
 						"type": "array",
@@ -292,6 +335,15 @@
 					},
 					"reqAttuneAltTags": {
 						"$ref": "util.json#/definitions/reqAttuneTags"
+					},
+					"weaponCategory": {
+						"$ref": "shared-items.json#/definitions/itemWeaponCategory"
+					},
+					"hasFluff": {
+						"type": "boolean"
+					},
+					"hasFluffImages": {
+						"type": "boolean"
 					},
 					"fluff": {
 						"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source.",
@@ -328,9 +380,7 @@
 								"$ref": "util.json#/definitions/fluffObject"
 							}
 						]
-					},
-					"hasFluff": {"type": "boolean"},
-					"hasFluffImages": {"type": "boolean"}
+					}
 				},
 				"required": [
 					"name",

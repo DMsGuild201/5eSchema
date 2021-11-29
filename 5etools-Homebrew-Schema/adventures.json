@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "adventures.json",
-	"version": "1.1.9",
+	"version": "1.10.0",
 	"type": "object",
 	"properties": {
 		"adventure": {
@@ -14,7 +14,7 @@
 					},
 					"id": {
 						"type": "string",
-						"description": "An ID that will be used to refer to this adventure in tags.\n Best practice is to make this different to the homebrew json abbreviation key."
+						"description": "An ID that will be used to refer to this adventure in tags."
 					},
 					"source": {
 						"type": "string"
@@ -26,34 +26,12 @@
 					"group": {
 						"description": "The group under which this adventure should be listed in the navbar.",
 						"type": "string",
-						"enum": ["supplement", "supplement-alt", "homebrew", "other"]
-					},
-					"alAveragePlayerLevel": {
-						"description": "Adventurers League Average Player Level; for use in homebrew.",
-						"type": "integer"
-					},
-					"alLength": {
-						"description": "Adventurers League length (in hours); for use in homebrew.",
-						"type": "object",
-						"oneOf": [
-							{
-								"properties": {
-									"min": {"type": "integer"},
-									"max": {"type": "integer"}
-								},
-								"required": ["min", "max"]
-							},
-							{
-								"properties": {
-									"exact": {"type": "integer"}
-								},
-								"required": ["exact"]
-							}
+						"enum": [
+							"supplement",
+							"supplement-alt",
+							"homebrew",
+							"other"
 						]
-					},
-					"alId": {
-						"description": "Adventurers League ID; for use in homebrew.",
-						"type": "string"
 					},
 					"contents": {
 						"description": "The linked Table of Contents of the adventure.",
@@ -97,10 +75,19 @@
 									"properties": {
 										"type": {
 											"type": "string",
-											"enum": ["chapter", "appendix", "part", "episode", "level"]
+											"enum": [
+												"chapter",
+												"appendix",
+												"part",
+												"episode",
+												"level"
+											]
 										},
 										"identifier": {
-											"type": ["integer", "string"]
+											"type": [
+												"integer",
+												"string"
+											]
 										}
 									},
 									"additionalProperties": false,
@@ -191,6 +178,44 @@
 							"The Wild Beyond the Witchlight",
 							"Ixalan"
 						]
+					},
+					"alAveragePlayerLevel": {
+						"description": "Adventurers League Average Player Level; for use in homebrew.",
+						"type": "integer"
+					},
+					"alLength": {
+						"description": "Adventurers League length (in hours); for use in homebrew.",
+						"type": "object",
+						"oneOf": [
+							{
+								"properties": {
+									"min": {
+										"type": "integer"
+									},
+									"max": {
+										"type": "integer"
+									}
+								},
+								"required": [
+									"min",
+									"max"
+								]
+							},
+							{
+								"properties": {
+									"exact": {
+										"type": "integer"
+									}
+								},
+								"required": [
+									"exact"
+								]
+							}
+						]
+					},
+					"alId": {
+						"description": "Adventurers League ID; for use in homebrew.",
+						"type": "string"
 					}
 				},
 				"additionalProperties": false,

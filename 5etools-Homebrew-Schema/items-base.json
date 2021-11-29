@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items-base.json",
-	"version": "1.4.5",
+	"version": "1.4.7",
 	"definitions": {
 		"itemLookup": {
 			"type": "array",
@@ -53,10 +53,10 @@
 						"type": "string"
 					},
 					"type": {
-						"$ref": "util.json#/definitions/itemTypeTags"
+						"$ref": "shared-items.json#/definitions/itemType"
 					},
 					"rarity": {
-						"$ref": "util.json#/definitions/itemRarity"
+						"$ref": "shared-items.json#/definitions/itemRarity"
 					},
 					"source": {
 						"type": "string"
@@ -68,8 +68,7 @@
 						"type": "integer"
 					},
 					"age": {
-						"type": "string",
-						"examples": ["futuristic", "modern", "renaissance"]
+						"$ref": "shared-items.json#/definitions/itemAge"
 					},
 					"armor": {
 						"description": "Flag used when merging generic variants",
@@ -98,12 +97,7 @@
 						}
 					},
 					"property": {
-						"type": "array",
-						"description": "2H: Two-Handed\n A: Ammunition\n AF: Ammunition (futuristic)\n BF: Burst Fire\n EM: Eldritch Machine\n F: Finesse\n H: Heavy\n L: Light\n LD: Loading\n OTH: Other\n R: Reach\n RLD: Reload\n S: Special\n T: Thrown\n V: Versatile",
-						"items": {
-							"type": "string",
-							"examples": ["2H", "A", "AF", "BF", "EM", "F", "H", "L", "LD", "OTH", "R", "RLD", "S", "T", "V"]
-						}
+						"$ref": "shared-items.json#/definitions/itemProperty"
 					},
 					"range": {
 						"type": "string"
@@ -112,8 +106,7 @@
 						"type": "integer"
 					},
 					"scfType": {
-						"type": "string",
-						"examples": ["arcane", "druid", "holy"]
+						"$ref": "shared-items.json#/definitions/itemScfType"
 					},
 					"stealth": {
 						"type": "boolean"
@@ -159,10 +152,6 @@
 						"description": "In copper pieces.",
 						"type": "number"
 					},
-					"currencyConversion": {
-						"description": "ID of a value conversion table. Homebrew only.",
-						"type": "string"
-					},
 					"valueMult": {
 						"type": "number"
 					},
@@ -170,8 +159,7 @@
 						"type": "boolean"
 					},
 					"weaponCategory": {
-						"type": "string",
-						"examples": ["simple", "martial"]
+						"$ref": "shared-items.json#/definitions/itemWeaponCategory"
 					},
 					"weight": {
 						"type": "number"
@@ -185,12 +173,14 @@
 					"srd": {
 						"$ref": "util.json#/definitions/srd"
 					},
+					"basicRules": {
+						"$ref": "util.json#/definitions/basicRules"
+					},
 					"otherSources": {
 						"$ref": "util.json#/definitions/otherSources"
 					},
 					"ammoType": {
-						"type": "string",
-						"examples": ["energy cell", "modern bullet", "blowgun needle|phb", "crossbow bolt|phb", "arrow|phb", "renaissance bullet", "sling bullet|phb"]
+						"$ref": "shared-items.json#/definitions/itemAmmoType"
 					},
 					"packContents": {
 						"type": "array",
@@ -210,7 +200,9 @@
 										}
 									},
 									"additionalProperties": false,
-									"required": ["special"]
+									"required": [
+										"special"
+									]
 								},
 								{
 									"type": "object",
@@ -223,13 +215,24 @@
 										}
 									},
 									"additionalProperties": false,
-									"required": ["item", "quantity"]
+									"required": [
+										"item",
+										"quantity"
+									]
 								}
 							]
 						}
 					},
-					"hasFluff": {"type": "boolean"},
-					"hasFluffImages": {"type": "boolean"}
+					"hasFluff": {
+						"type": "boolean"
+					},
+					"hasFluffImages": {
+						"type": "boolean"
+					},
+					"currencyConversion": {
+						"description": "ID of a value conversion table. Homebrew only.",
+						"type": "string"
+					}
 				},
 				"required": [
 					"name",
@@ -252,11 +255,17 @@
 			"items": {
 				"type": "object",
 				"properties": {
-					"name": {"type": "string"},
-					"source": {"type": "string"},
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
 					"entriesTemplate": {
 						"type": "array",
-						"items": {"$ref": "entry.json"}
+						"items": {
+							"$ref": "entry.json"
+						}
 					}
 				}
 			}

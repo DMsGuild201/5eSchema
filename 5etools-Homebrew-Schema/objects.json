@@ -3,7 +3,6 @@
 	"$id": "objects.json",
 	"version": "1.2.2",
 	"type": "object",
-
 	"definitions": {
 		"object": {
 			"type": "object",
@@ -26,7 +25,11 @@
 				"objectType": {
 					"type": "string",
 					"description": "G: Generic\n SW: Siege Weapon\n U: Unknown",
-					"enum": ["GEN", "SW", "U"]
+					"enum": [
+						"GEN",
+						"SW",
+						"U"
+					]
 				},
 				"str": {
 					"type": "integer"
@@ -48,26 +51,38 @@
 				},
 				"ac": {
 					"oneOf": [
-						{"type": "integer"},
+						{
+							"type": "integer"
+						},
 						{
 							"type": "object",
 							"properties": {
-								"special": {"type": "string"}
+								"special": {
+									"type": "string"
+								}
 							},
-							"required": ["special"],
+							"required": [
+								"special"
+							],
 							"additionalProperties": false
 						}
 					]
 				},
 				"hp": {
 					"oneOf": [
-						{"type": "integer"},
+						{
+							"type": "integer"
+						},
 						{
 							"type": "object",
 							"properties": {
-								"special": {"type": "string"}
+								"special": {
+									"type": "string"
+								}
 							},
-							"required": ["special"],
+							"required": [
+								"special"
+							],
 							"additionalProperties": false
 						}
 					]
@@ -127,10 +142,8 @@
 				"hp",
 				"immune"
 			]
-
 		}
 	},
-
 	"properties": {
 		"object": {
 			"type": "array",
