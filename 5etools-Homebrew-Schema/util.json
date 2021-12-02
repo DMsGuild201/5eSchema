@@ -1909,7 +1909,9 @@
 		"srd": {
 			"type": ["boolean", "string"]
 		},
-
+		"basicRules": {
+			"type": "boolean"
+		},
 		"fluffObject": {
 			"type": "object",
 			"properties": {
