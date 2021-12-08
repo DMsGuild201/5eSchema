@@ -1,4 +1,20 @@
-# Current Site Version Compatibility and Provenance
+# This schema repo is now deprecated
+
+Please refer to the official homebrew schema which was built with support from this project:
+
+```json
+{
+    "$schema": "https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/_schema/homebrew.json"
+}
+```
+
+The official schema does not currently support the reduced validation for adventures and books resulting in performance issues with validation of large files. This functionality will be implemented soon :tm:.
+
+In the interim period either use the full schema or run the full validation script available here:
+
+<https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/_test/test-json.js>
+
+## Current Site Version Compatibility and Provenance
 
 This schema repo is currently updated to support version `1.142.0` of the site.
 
