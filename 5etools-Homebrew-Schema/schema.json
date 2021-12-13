@@ -4,7 +4,6 @@
 	"type": "object",
 	"description": "This schema redirects to the official homebrew schema build that should be used instead.",
 	"items": {
-		"$ref": "https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/_schema/homebrew.json",
-		"$comment": "Note that this does not currently support the reduced schema that lints quickly for adventures and books. This functionality will be implemented soon :tm:."
+		"$ref": "https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/_schema-fast/homebrew.json"
 	}
 }

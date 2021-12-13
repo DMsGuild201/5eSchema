@@ -4,17 +4,15 @@ Please refer to the official homebrew schema which was built with support from t
 
 ```json
 {
-    "$schema": "https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/_schema/homebrew.json"
+    "$schema": "https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/_schema-fast/homebrew.json"
 }
 ```
 
-The official schema does not currently support the reduced validation for adventures and books resulting in performance issues with validation of large files. This functionality will be implemented soon :tm:.
-
-In the interim period either use the full schema or run the full validation script available here:
+Either use the 'fast' schema to validate live in your IDE; or run the full validation script which is available here:
 
 <https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/_test/test-json.js>
 
-## Current Site Version Compatibility and Provenance
+## Final Site Version Compatibility and Provenance
 
 This schema repo is currently updated to support version `1.142.0` of the site.
 
